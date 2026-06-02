@@ -35,7 +35,7 @@ def Logar():
             
             print("-- ERROR --")
     
-        contador = contador - 1
+    contador = contador - 1
 
 
 def VerUsuariosCadastrados():
