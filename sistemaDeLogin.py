@@ -1,16 +1,29 @@
+import random
+
 dictCadastroDeUsuario: dict = {}
+listaSenhaAleatoria: list = ["tre12", "papa34", "macadoamo4", "peixefeio"]
+listaDeNovasSenhas: list = ["fres2", "prato34", "quiqui66", "hyuga676"]
+
 
 def CadastroUsuarios():
     
-    novoUsuario = str(input("Informe um nome de usuario: ")).upper()
-    senhaUsuario = str(input("Informe a senha a ser cadastrada: ")).upper()
+    novoUsuario = str(input("Informe um nome de usuario: "))
+    senhaUsuario = random.choice(listaSenhaAleatoria)
     dictCadastroDeUsuario[novoUsuario] = senhaUsuario
     print("Usuario Cadastrado com sucesso.")
+    
+    
 
 def RemoverUsuarios():
-
-    remover = str(input("Informe o usuario a ser removido: ")).upper()
+    
+    novasSenhas = random.choice(listaDeNovasSenhas)
+    remover = str(input("Informe o usuario a ser removido: "))
+    listaSenhaAleatoria.append(novasSenhas)
+    
     del dictCadastroDeUsuario[remover]
+    
+    
+    
     print("Cadastro deletado do sistema.")
 
 def Logar():
@@ -18,8 +31,8 @@ def Logar():
     contador: int = 3
     while contador >= 0:
 
-        usuario = str(input("Informe o nome de usuario: ")).upper()
-        senha = str(input("Informe a senha cadastrada: ")).upper()
+        usuario = str(input("Informe o nome de usuario: "))
+        senha = str(input("Informe a senha cadastrada: "))
 
         if (usuario, senha) in dictCadastroDeUsuario.items():
 
@@ -33,7 +46,9 @@ def Logar():
         
         else:
             
-            print("-- ERROR --")
+            print("Tentativas excedidas")
+            
+            print("Redirecionando a página inicial...")
     
         contador = contador - 1
 
