@@ -11,8 +11,6 @@ def CadastroUsuarios():
     senhaUsuario = random.choice(listaSenhaAleatoria)
     dictCadastroDeUsuario[novoUsuario] = senhaUsuario
     print("Usuario Cadastrado com sucesso.")
-    
-    
 
 def RemoverUsuarios():
     
@@ -21,9 +19,6 @@ def RemoverUsuarios():
     listaSenhaAleatoria.append(novasSenhas)
     
     del dictCadastroDeUsuario[remover]
-    
-    
-    
     print("Cadastro deletado do sistema.")
 
 def Logar():
@@ -43,11 +38,9 @@ def Logar():
             print("Usuario ou senha incorretos")
             print("Tente novamente")
         
-        
         else:
             
             print("Tentativas excedidas")
-            
             print("Redirecionando a página inicial...")
     
         contador = contador - 1
