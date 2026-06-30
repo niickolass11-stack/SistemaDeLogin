@@ -1,22 +1,43 @@
 import random
 
 dictCadastroDeUsuario: dict = {}
-listaSenhaAleatoria: list = ["tre12", "papa34", "macadoamo4", "peixefeio"]
-listaDeNovasSenhas: list = ["fres2", "prato34", "quiqui66", "hyuga676"]
+
+digitosParaSenhaAleatoria = ["a","b","c","d","e","1","2","3","4","5"]
+
+
+def senhaAleatoria():
+    
+    senhaGerada = ""
+
+    for senha in range(6):
+
+        novaSenha = random.choice(digitosParaSenhaAleatoria)
+
+        senhaGerada = senhaGerada + novaSenha
+    
+    return senhaGerada
+
+
+
+
+    
+
 
 
 def CadastroUsuarios():
     
     novoUsuario = str(input("Informe um nome de usuario: "))
-    senhaUsuario = random.choice(listaSenhaAleatoria)
+    
+    senhaUsuario = senhaAleatoria()
+    print(f"Sua senha e {senhaUsuario}")
     dictCadastroDeUsuario[novoUsuario] = senhaUsuario
     print("Usuario Cadastrado com sucesso.")
 
 def RemoverUsuarios():
     
-    novasSenhas = random.choice(listaDeNovasSenhas)
+    
     remover = str(input("Informe o usuario a ser removido: "))
-    listaSenhaAleatoria.append(novasSenhas)
+
     
     del dictCadastroDeUsuario[remover]
     print("Cadastro deletado do sistema.")
@@ -48,7 +69,9 @@ def Logar():
 
 def VerUsuariosCadastrados():
 
-    print(dictCadastroDeUsuario)
+    for nome,senha in dictCadastroDeUsuario.items():
+
+        print(f"Usuario: {nome} Senha: {senha}")
 
 
 def Menu():
