@@ -4,7 +4,6 @@ dictCadastroDeUsuario: dict = {}
 
 digitosParaSenhaAleatoria = ["a","b","c","d","e","1","2","3","4","5"]
 
-
 def senhaAleatoria():
     
     senhaGerada = ""
@@ -16,13 +15,6 @@ def senhaAleatoria():
         senhaGerada = senhaGerada + novaSenha
     
     return senhaGerada
-
-
-
-
-    
-
-
 
 def CadastroUsuarios():
     
